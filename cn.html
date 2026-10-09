@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>A'GAIN 观想再生 — 咖啡 · 再生 · 香氛</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+    background: #f7f5f1;
+    color: #26241f;
+  }
+
+  /* 顶部导航 */
+  .nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 34px;
+    background: rgba(247, 245, 241, 0.92);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid rgba(38, 36, 31, 0.07);
+  }
+  .nav .logo { font-size: 19px; font-weight: 700; letter-spacing: .34em; }
+  .nav .menu { display: flex; align-items: center; gap: 26px; }
+  .nav .menu a { color: #55524a; text-decoration: none; font-size: 13.5px; letter-spacing: .12em; }
+  .nav .menu a.active { color: #26241f; font-weight: 600; border-bottom: 2px solid #26241f; padding-bottom: 3px; }
+  .nav .lang { font-size: 13px; color: #8a867c; letter-spacing: .18em; }
+
+  /* Hero */
+  .hero {
+    position: relative; height: 92vh; min-height: 560px;
+    display: flex; align-items: center; justify-content: center; text-align: center;
+    background: url("assets_cn/cn_hero.jpg") center 38% / cover no-repeat;
+  }
+  .hero::before {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(15, 18, 24, 0.38) 0%, rgba(15, 18, 24, 0.30) 45%, rgba(15, 18, 24, 0.55) 100%);
+  }
+  .hero-inner { position: relative; color: #f5f3ee; padding: 0 24px; }
+  .hero-inner h1 { font-size: 44px; font-weight: 600; letter-spacing: .30em; text-indent: .30em; margin-bottom: 16px; }
+  .hero-inner .script { font-style: italic; font-family: Georgia, "Times New Roman", serif; font-size: 17px; letter-spacing: .08em; opacity: .92; margin-bottom: 14px; }
+  .hero-inner p { font-size: 15px; letter-spacing: .22em; line-height: 2; opacity: .95; }
+  .hero-inner .btn {
+    display: inline-block; margin-top: 30px;
+    padding: 12px 34px; border: 1px solid rgba(245, 243, 238, 0.85); border-radius: 100px;
+    color: #f5f3ee; text-decoration: none; font-size: 13.5px; letter-spacing: .16em;
+    transition: all .25s ease;
+  }
+  .hero-inner .btn:hover { background: rgba(245, 243, 238, 0.92); color: #26241f; }
+
+  /* 区块标题 */
+  .sec-head { text-align: center; padding: 84px 24px 40px; }
+  .sec-head .pill {
+    display: inline-block; padding: 6px 20px; border: 1px solid #b9b4a8; border-radius: 100px;
+    font-family: Georgia, serif; font-style: italic; font-size: 13px; color: #6d695e; letter-spacing: .06em;
+  }
+  .sec-head h2 { margin-top: 18px; font-size: 30px; font-weight: 600; letter-spacing: .28em; text-indent: .28em; }
+
+  /* 商品陈列（迁移前：基础图文罗列） */
+  .goods {
+    max-width: 1060px; margin: 0 auto; padding: 10px 34px 90px;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px;
+  }
+  .goods .item { background: #ffffff; border: 1px solid rgba(38, 36, 31, 0.06); }
+  .goods .item .ph { height: 300px; overflow: hidden; }
+  .goods .item .ph img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .goods .item.banner { grid-column: 1 / -1; }
+  .goods .item.banner .ph { height: 240px; }
+  .goods .item .cap { padding: 15px 18px 17px; border-top: 1px solid rgba(38, 36, 31, 0.06); }
+  .goods .item .cap b { display: block; font-size: 14.5px; letter-spacing: .1em; font-weight: 600; }
+  .goods .item .cap span { display: block; margin-top: 5px; font-size: 12.5px; color: #8a867c; letter-spacing: .06em; }
+
+  /* 页脚 */
+  .footer {
+    background: #211f1b; color: #b5b1a6; text-align: center;
+    padding: 30px 20px; font-size: 12.5px; letter-spacing: .2em;
+  }
+  .footer b { color: #e8e5dd; letter-spacing: .34em; font-weight: 600; }
+</style>
+</head>
+<body>
+
+  <div class="nav">
+    <span class="logo">A'GAIN</span>
+    <div class="menu">
+      <a href="#" class="active">首页</a>
+      <a href="#">产品</a>
+      <a href="#">品牌理念</a>
+      <a href="#">联系我们</a>
+    </div>
+    <span class="lang">EN</span>
+  </div>
+
+  <div class="hero">
+    <div class="hero-inner">
+      <h1>观想再生</h1>
+      <div class="script">L'odeur de la Terre</div>
+      <p>深睡 &nbsp;专注 &nbsp;解压 &nbsp;焕能<br />自然再生的力量 让自己再生</p>
+      <a class="btn" href="#goods">关于 A'GAIN</a>
+    </div>
+  </div>
+
+  <div class="sec-head" id="goods">
+    <span class="pill">L'odeur de la Terre</span>
+    <h2>咖啡 · 再生 · 香氛</h2>
+  </div>
+
+  <div class="goods">
+    <div class="item">
+      <div class="ph"><img src="assets_cn/cn_soap.jpg" alt="咖啡渣再生手工皂" /></div>
+      <div class="cap"><b>咖啡渣再生手工皂</b><span>¥ 68 / 100g · 深层净澈</span></div>
+    </div>
+    <div class="item">
+      <div class="ph"><img src="assets_cn/cn_package.jpg" alt="咖啡蜡烛礼盒" /></div>
+      <div class="cap"><b>咖啡蜡烛礼盒</b><span>¥ 168 / 套 · 蜂蜡热能</span></div>
+    </div>
+    <div class="item">
+      <div class="ph"><img src="assets_cn/cn_candle.jpg" alt="管香咖啡香氛蜡烛" /></div>
+      <div class="cap"><b>管香咖啡香氛蜡烛</b><span>¥ 99 / 200g · 深睡解压</span></div>
+    </div>
+    <div class="item banner">
+      <div class="ph"><img src="assets_cn/cn_hero.jpg" alt="品牌视觉" style="object-position: center 60%;" /></div>
+      <div class="cap"><b>自然再生的力量</b><span>每一件产品，都来自咖啡渣的循环再生</span></div>
+    </div>
+  </div>
+
+  <div class="footer"><b>A'GAIN</b> &nbsp;·&nbsp; 观想再生 &nbsp;·&nbsp; 咖啡渣的循环之旅</div>
+
+</body>
+</html>
